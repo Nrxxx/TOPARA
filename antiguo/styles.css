@@ -1,0 +1,44 @@
+.menu {
+display: static;
+}
+
+.logotipo {
+    width: 149.10px;
+    height: 55px;
+}
+
+body { font-family: sans-serif; }
+.seccion { margin-top: 100vh; padding: 20px; border: 1px solid #ccc; }
+button { padding: 10px 20px; font-size: 16px; cursor: pointer; }
+/* Para que el enlace se vea como un botón */
+a.boton-estilo { text-decoration: none; }
+
+
+
+/* ocultar seccion premium */
+section { padding: 2rem 1rem; }
+.hidden { display: none; }
+
+
+
+        #landing-container {
+            display: none; /* Esto lo oculta inicialmente */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        #landing-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 80%;
+            max-height: 80%;
+            overflow: auto;
+        }

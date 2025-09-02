@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ropa y Equipamiento para Senderismo - Protección | TOPARA</title>
+    <link rel="icon" href="https://newbrandtotto.vtexassets.com/arquivos/topara-favicon-56.png">
+    <link rel="stylesheet" href="/static/styleTopara.css">
+</head>
+<body>
+<header class="header">
+    <div class="header-left">
+        <div class="container-header">
+            <button class="btn">
+                <i class="arrow"></i>DEPORTES
+            </button>
+            <div class="dropDown">
+                <a href="/templates/DEPORTES/senderismo.html">SENDERISMO</a>
+                <a href="/templates/DEPORTES/trail_running.html">TRAIL RUNNING</a>
+                <a href="/templates/DEPORTES/ciclismo.html">CICLISMO</a>
+                <a href="/templates/DEPORTES/acuatico.html">ACUÁTICO</a>
+            </div>
+        </div>
+
+        <div class="container-header">
+            <button class="btn">
+            <i class="arrow"></i>MUJER
+            </button>
+            <div class="dropDown">
+                <div class="container-header">
+                    <button class="btn">
+                        <i class="arrow"></i>ROPA
+                    </button>
+                    <div class="dropDown">
+                        <a href="/templates/MUJER/ROPA/chaquetas.html">CHAQUETAS</a>
+                        <a href="/templates/MUJER/ROPA/buzos.html">BUZOS</a>
+                        <a href="/templates/MUJER/ROPA/chalecos.html">CHALECOS</a>
+                        <a href="/templates/MUJER/ROPA/pantalones.html">PANTALONES</a>
+                        <a href="/templates/MUJER/ROPA/shorts.html">SHORTS</a>
+                        <a href="/templates/MUJER/ROPA/tops.html">TOPS</a>
+                        <a href="/templates/MUJER/ROPA/camisas.html">CAMISAS</a>
+                        <a href="/templates/MUJER/ROPA/camisetas.html">CAMISETAS</a>
+                        <a href="/templates/MUJER/ROPA/vestidos_de_baño.html">VESTIDOS DE BAÑO</a>
+                    </div>
+                </div>
+                <a href="/templates/MUJER/accesorios.html">ACCESORIOS</a>
+            </div>
+        </div>
+
+        <div class="container-header">
+            <button class="btn">
+                <i class="arrow"></i>HOMBRE
+            </button>
+            <div class="dropDown">
+                <div class="container-header">
+                    <button class="btn">
+                        <i class="arrow"></i>ROPA
+                    </button>
+                    <div class="dropDown">
+                        <a href="">CHAQUETAS</a>
+                        <a href="">BUZOS</a>
+                        <a href="">CHALECOS</a>
+                        <a href="">PANTALONES</a>
+                        <a href="">SHORTS</a>
+                        <a href="">CAMISAS</a>
+                        <a href="">CAMISETAS</a>
+                        <a href="">VESTIDOS DE BAÑO</a>
+                    </div>
+                </div>
+                <a href="">ACCESORIOS</a>
+            </div>
+        </div>
+
+        <div class="container-header">
+            <button class="btn">
+                <i class="arrow"></i>ACCESORIOS
+            </button>
+            <div class="dropDown">
+                <a href="">BOTELLONES</a>
+                <a href="">CANGUROS</a>
+                <a href="">GORRAS Y GORROS</a>
+                <a href="">ORGANIZADORES</a>
+            </div>
+        </div>
+
+        <div class="container-header">
+            <button class="btn">
+                <i class="arrow"></i>EQUIPAJE
+            </button>
+            <div class="dropDown">
+                <a href="">MORRALES</a>
+                <a href="">TULAS</a>
+            </div>
+        </div>
+
+        <div class="container-header">
+            <button class="btn">
+                <i class="arrow"></i>SALE
+            </button>
+            <div class="dropDown">
+                <a href="/templates/SALE/sale.html">SALE</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-center">
+        <a href="">
+            <img src="https://newbrandtotto.vtexassets.com/assets/vtex.file-manager-graphql/images/9a3dd0e0-d845-43c6-90a1-3075391cee8d___903a386389044fc0d431d87cf59a1c78.svg" class="logo">
+        </a>
+    </div>
+
+    <div class="header-right">
+
+        <button id="search-button" class="btn">
+            BUSCAR
+        </button>
+        <form id="search-form" class="hidden">
+            <input type="text" placeholder="Buscar..." name="q" id="search-input">
+        </form>
+
+        <button id="openmodalbtn" class="btn">INGRESAR</button>
+        <div id="mymodal" class="modal">
+            <div class="modalcontent">
+                <span class="closebtn">&times;</span>
+                <p>Elige una opcion para ingresar</p>
+
+                <form id="loginForm" class="login-form">
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="e-mail">
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="password" id="password" name="password" placeholder="password">
+                    </div>
+                    
+                    <button type="submit" id="loginButton">CONFIRMAR</button>
+                </form>
+            </div>
+        </div>
+
+        <button id="cart-button" class="btn">CARRITO</button>
+
+        <div id="cart-panel" class="side-panel">
+            <div class="panel-header">
+                <button id="close-button">&times;</button>
+                <h2>¡Tu carrito esta vacio!</h2>
+            </div>
+
+            <div class="panel-content">
+                <div class="category">
+                        <div class="one-section">
+                            <a href="/templates/DEPORTES/trail_running.html" class="carrito">
+                                <img src="/assets/img/carrito1.png" alt="">
+                            </a>
+                            <a href="/templates/DEPORTES/ciclismo.html" class="carrito">
+                                <img src="/assets/img/carrito2.png" alt="">
+                            </a>
+                            <a href="/templates/EQUIPAJE/equipaje.html" class="carrito">
+                                <img src="/assets/img/carrito3.png" alt="">
+                            </a>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+    <script src="/static/appTopara.js"></script>
+</body>
+</html>
