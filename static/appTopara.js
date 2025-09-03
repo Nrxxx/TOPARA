@@ -7,22 +7,26 @@ dropdownBtns.forEach(dropdownBtn => {
     const dropdownMenu = dropdownBtn.parentElement.querySelector(".dropDown");
     const toggleArrow = dropdownBtn.querySelector(".arrow");
 
-const toggleDropdown = function () {
-    dropdownMenu.classList.toggle("show");
-    toggleArrow.classList.toggle("arrow");
-}
+    const toggleDropdown = () => {
+        dropdownMenu.classList.toggle("show");
+        if (toggleArrow) {
+        toggleArrow.classList.toggle("arrow");
+        }
+    };
 
-dropdownBtn.addEventListener("click", function (e) {
-    e.stopPropagation();
-    toggleDropdown();
+    dropdownBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        toggleDropdown();
+    });
+
+    document.documentElement.addEventListener("click", function () {
+        if (dropdownMenu.classList.contains("show")) {
+        toggleDropdown();
+        }
+    });
 });
 
-document.documentElement.addEventListener("click", function () {
-    if (dropdownMenu.classList.contains("show")) {
-    toggleDropdown();
-    }
-});
-});
+
 
 // BUSCAR
 
@@ -159,31 +163,6 @@ window.onclick = function(event) {
     modal.style.display = 'none';
     }
 }
-
-
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    // Obtenemos los elementos HTML por su ID
-    const cartButton = document.getElementById('cart-button');
-    const closeButton = document.getElementById('close-button');
-    const cartPanel = document.getElementById('cart-panel');
-
-    // Función para abrir el panel
-    function openPanel() {
-        cartPanel.classList.add('is-open');
-    }
-
-    // Función para cerrar el panel
-    function closePanel() {
-        cartPanel.classList.remove('is-open');
-    }
-
-    // Añadimos los "oyentes" de eventos a los botones
-    cartButton.addEventListener('click', openPanel);
-    closeButton.addEventListener('click', closePanel);
-});
 
 
 

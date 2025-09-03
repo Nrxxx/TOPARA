@@ -104,13 +104,7 @@
     display: block;
 }
 
-
-
-
-
-
-
-
+/* SECCION PREMIUM */
 
 .modal {
     display: none; /* Oculta la modal por defecto */
@@ -232,62 +226,6 @@
 /* One section */
 
 .one-section {
-    align-items: center;
-}
-
-
-
-
-
-
-
-/* Estilos del contenedor del panel lateral */
-.side-panel {
-    position: fixed; /* Permanece en la misma posición, aunque se haga scroll */
-    top: 0;
-    right: -400px; /* Inicialmente fuera de la pantalla, a la derecha. Ajusta este valor si tu panel es más ancho. */
-    width: 400px;
-    height: 100%; /* Ocupa toda la altura de la ventana */
-    background-color: white;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5); /* Sombra sutil */
-    transition: right 0.3s ease-in-out; /* Transición para la animación de deslizamiento */
-    z-index: 1000; /* Asegura que el panel esté encima de otros elementos */
-    overflow-y: auto; /* Agrega scroll si el contenido es muy largo */
-}
-
-/* Esta clase es la que usaremos para mostrar el panel */
-.side-panel.is-open {
-    right: 0; /* Desliza el panel para que sea visible */
-}
-
-/* Estilos para los elementos internos del panel */
-.panel-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    border-bottom: 1px solid #ddd;
-}
-
-#close-button {
-    background: none;
-    border: none;
-    font-size: 2em;
-    cursor: pointer;
-}
-
-.panel-content {
-    padding: 20px;
-}
-
-.category img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.carrito {
-    display: flex;
     align-items: center;
 }
 
