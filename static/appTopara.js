@@ -1,192 +1,187 @@
+// =========================
+// MENÚ DESPLEGABLE
+// =========================
+document.addEventListener("DOMContentLoaded", () => {
+  const dropdownBtns = document.querySelectorAll(".btn");
 
-// HEADER 
-
-const dropdownBtns = document.querySelectorAll(".btn");
-
-dropdownBtns.forEach(dropdownBtn => {
+  dropdownBtns.forEach((dropdownBtn) => {
     const dropdownMenu = dropdownBtn.parentElement.querySelector(".dropDown");
-    const toggleArrow = dropdownBtn.querySelector(".arrow");
 
-const toggleDropdown = function () {
-    dropdownMenu.classList.toggle("show");
-    toggleArrow.classList.toggle("arrow");
-}
+    if (!dropdownMenu) return;
 
-dropdownBtn.addEventListener("click", function (e) {
-    e.stopPropagation();
-    toggleDropdown();
+    const toggleDropdown = () => {
+      dropdownMenu.classList.toggle("show");
+    };
+
+    dropdownBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      toggleDropdown();
+    });
+
+    document.documentElement.addEventListener("click", () => {
+      if (dropdownMenu.classList.contains("show")) {
+        dropdownMenu.classList.remove("show");
+      }
+    });
+  });
 });
 
-document.documentElement.addEventListener("click", function () {
-    if (dropdownMenu.classList.contains("show")) {
-    toggleDropdown();
-    }
-});
-});
+// =========================
+// BUSCADOR
+// =========================
+document.addEventListener("DOMContentLoaded", () => {
+  const searchButton = document.getElementById("search-button");
+  const searchForm = document.getElementById("search-form");
+  const searchInput = document.getElementById("search-input");
 
-// BUSCAR
-
-document.addEventListener('DOMContentLoaded', () => {
-    const searchButton = document.getElementById('search-button');
-    const searchForm = document.getElementById('search-form');
-    const searchInput = document.getElementById('search-input');
-
-    searchButton.addEventListener('click', () => {
-    // Alterna la clase 'show' al hacer clic en el botón
-    searchForm.classList.toggle('show');
-    
-    // Enfoca el campo de texto si la barra está visible
-    if (searchForm.classList.contains('show')) {
+  if (searchButton && searchForm && searchInput) {
+    searchButton.addEventListener("click", () => {
+      searchForm.classList.toggle("show");
+      if (searchForm.classList.contains("show")) {
         searchInput.focus();
-    }
+      }
     });
+  }
 });
 
-// LOGIN
-
-    function handleCredentialResponse(response) {
-    const profile = parseJwt(response.credential)
-    console.log("Email del usuario: " + profile.email)
-
-    // Guardar usuario en localStorage
-    localStorage.setItem("usuario", JSON.stringify(profile))
-
-    validarUsuario(profile)
-    }
-
-    function validarUsuario(profile) {
-    if (profile.email === "quinteron557@gmail.com") {
-        alert("¡Bienvenido, usuario premium!")
-        document.getElementById("premiumSection").style.display = "block"
-        document.getElementById("g_id_signin").style.display = "none"
-    } else {
-        alert("Inicio de sesión exitoso, pero no eres un usuario premium.")
-    }
-    }
-
-    // Función logout
-    function logout() {
-    localStorage.removeItem("usuario")
-    document.getElementById("premiumSection").style.display = "none"
-    document.getElementById("g_id_signin").style.display = "block"
-    }
-
-    // Revisar si ya había sesión guardada al cargar
-    window.onload = () => {
-    const guardado = localStorage.getItem("usuario")
-    if (guardado) {
-        const profile = JSON.parse(guardado)
-        validarUsuario(profile)
-    }
-    }
-
-    // Función auxiliar para decodificar el JWT de Google
-    function parseJwt(token) {
-    var base64Url = token.split(".")[1]
-    var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/")
-    var jsonPayload = decodeURIComponent(
-        atob(base64)
-        .split("")
-        .map(function (c) {
-            return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2)
-        })
-        .join("")
-    )
-    return JSON.parse(jsonPayload)
-    }
-
-
+// =========================
 // CARRUSEL
+// =========================
+document.addEventListener("DOMContentLoaded", () => {
+  const carrucelItems = document.querySelectorAll(".carrucel-item");
+  const indicators = document.querySelectorAll(".indicator");
+  const prevButton = document.querySelector(".carrucel-control.prev");
+  const nextButton = document.querySelector(".carrucel-control.next");
 
-document.addEventListener('DOMContentLoaded', () => {
-    const carrucelItems = document.querySelectorAll('.carrucel-item');
-    const indicators = document.querySelectorAll('.indicator');
-    const prevButton = document.querySelector('.carrucel-control.prev');
-    const nextButton = document.querySelector('.carrucel-control.next');
+  if (!carrucelItems.length) return;
 
-    let currentIndex = 0;
+  let currentIndex = 0;
 
-    function showSlide(index) {
-        carrucelItems.forEach(item => item.classList.remove('active'));
-        carrucelItems[index].classList.add('active');
-        indicators.forEach(indicator => indicator.classList.remove('active'));
-        indicators[index].classList.add('active');
-    }
-    //7logica boton siguiente
-    nextButton.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % carrucelItems.length;
-        showSlide(currentIndex);
+  function showSlide(index) {
+    carrucelItems.forEach((item) => item.classList.remove("active"));
+    carrucelItems[index].classList.add("active");
+
+    indicators.forEach((ind) => ind.classList.remove("active"));
+    indicators[index].classList.add("active");
+  }
+
+  if (nextButton) {
+    nextButton.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % carrucelItems.length;
+      showSlide(currentIndex);
     });
-    //logica boton anterior
-    prevButton.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + carrucelItems.length) % carrucelItems.length;
-        showSlide(currentIndex);
-    });
+  }
 
-    //logica indicadores
-    indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => {
-            currentIndex = index;
-            showSlide(currentIndex);
-        });
+  if (prevButton) {
+    prevButton.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + carrucelItems.length) % carrucelItems.length;
+      showSlide(currentIndex);
     });
+  }
 
-    showSlide(currentIndex);
+  indicators.forEach((indicator, index) => {
+    indicator.addEventListener("click", () => {
+      currentIndex = index;
+      showSlide(currentIndex);
+    });
+  });
+
+  showSlide(currentIndex);
 });
 
+// =========================
+// MODAL
+// =========================
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("mymodal");
+  const closeBtn = modal?.querySelector(".closebtn");
+  const openBtn = document.getElementById("openmodalbtn");
 
+  if (!modal) return;
 
+  if (openBtn) {
+    openBtn.addEventListener("click", () => {
+      modal.style.display = "block";
+    });
+  }
 
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+  }
 
-// Obtiene los elementos del DOM
-const modal = document.getElementById('mymodal');
-const btn = document.getElementById('openmodalbtn');
-const span = document.getElementsByClassName('closebtn')[0];
-
-// Cuando el usuario hace clic en el botón, abre la modal
-btn.onclick = function() {
-    modal.style.display = 'block';
-}
-
-// Cuando el usuario hace clic en el botón de cierre (x), cierra la modal
-span.onclick = function() {
-    modal.style.display = 'none';
-}
-
-// Cuando el usuario hace clic en cualquier lugar fuera de la modal, la cierra
-window.onclick = function(event) {
-    if (event.target == modal) {
-    modal.style.display = 'none';
+  window.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      modal.style.display = "none";
     }
-}
-
-
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    // Obtenemos los elementos HTML por su ID
-    const cartButton = document.getElementById('cart-button');
-    const closeButton = document.getElementById('close-button');
-    const cartPanel = document.getElementById('cart-panel');
-
-    // Función para abrir el panel
-    function openPanel() {
-        cartPanel.classList.add('is-open');
-    }
-
-    // Función para cerrar el panel
-    function closePanel() {
-        cartPanel.classList.remove('is-open');
-    }
-
-    // Añadimos los "oyentes" de eventos a los botones
-    cartButton.addEventListener('click', openPanel);
-    closeButton.addEventListener('click', closePanel);
+  });
 });
 
+// =========================
+// PANEL LATERAL (CARRITO)
+// =========================
+document.addEventListener("DOMContentLoaded", () => {
+  const cartButton = document.getElementById("cart-button");
+  const closeButton = document.getElementById("close-button");
+  const cartPanel = document.getElementById("cart-panel");
 
+  if (cartButton && closeButton && cartPanel) {
+    cartButton.addEventListener("click", () => {
+      cartPanel.classList.add("is-open");
+    });
 
+    closeButton.addEventListener("click", () => {
+      cartPanel.classList.remove("is-open");
+    });
+
+    // cerrar si clic fuera
+    window.addEventListener("click", (event) => {
+      if (event.target === cartPanel) {
+        cartPanel.classList.remove("is-open");
+      }
+    });
+  }
+});
+
+// =========================
+// LOGIN CON GOOGLE (opcional)
+// =========================
+// function handleCredentialResponse(response) {
+//   const profile = parseJwt(response.credential);
+//   localStorage.setItem("usuario", JSON.stringify(profile));
+//   validarUsuario(profile);
+// }
+
+// function validarUsuario(profile) {
+//   if (profile.email === "quinteron557@gmail.com") {
+//     alert("¡Bienvenido, usuario premium!");
+//     document.getElementById("premiumSection").style.display = "block";
+//     document.getElementById("g_id_signin").style.display = "none";
+//   } else {
+//     alert("Inicio de sesión exitoso, pero no eres un usuario premium.");
+//   }
+// }
+
+// function logout() {
+//   localStorage.removeItem("usuario");
+//   document.getElementById("premiumSection").style.display = "none";
+//   document.getElementById("g_id_signin").style.display = "block";
+// }
+
+// function parseJwt(token) {
+//   var base64Url = token.split(".")[1];
+//   var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
+//   var jsonPayload = decodeURIComponent(
+//     atob(base64)
+//       .split("")
+//       .map(function (c) {
+//         return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
+//       })
+//       .join("")
+//   );
+//   return JSON.parse(jsonPayload);
+// }
 
 
 
