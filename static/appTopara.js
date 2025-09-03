@@ -135,12 +135,12 @@ document.addEventListener("DOMContentLoaded", () => {
       cartPanel.classList.remove("is-open");
     });
 
-    // cerrar si clic fuera
+    // Cerrar si se hace clic fuera del panel y del botón
     window.addEventListener("click", (event) => {
-      if (event.target === cartPanel) {
+      // Si el clic no fue dentro del panel Y no fue en el botón que lo abre
+      if (!cartPanel.contains(event.target) && !cartButton.contains(event.target)) {
         cartPanel.classList.remove("is-open");
       }
     });
   }
 });
-
