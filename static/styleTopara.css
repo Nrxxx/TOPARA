@@ -165,10 +165,12 @@ body {
 .carrucel-container {
   position: relative;
   overflow: hidden;
-  max-width: 100%;
+  width: 100%;
   height: 500px;
-  margin: 30px auto 0;
+  margin: 0; 
+  background-size: cover;
 }
+
 
 .carrucel-inner {
   position: relative;
@@ -255,7 +257,6 @@ body {
 /* =========================
    IMAGEN-DESCUENTO
 ========================= */
-
 .img-off {
   position: relative;
   overflow: hidden;
@@ -346,7 +347,6 @@ body {
 /* =========================
    RESPONSIVE
 ========================= */
-
 @media (max-width: 1024px) {
   body {
     font-size: 16px;
