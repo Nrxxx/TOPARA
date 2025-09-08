@@ -29,20 +29,48 @@ document.addEventListener("DOMContentLoaded", () => {
 // =========================
 // BUSCADOR
 // =========================
-document.addEventListener("DOMContentLoaded", () => {
-  const searchButton = document.getElementById("search-button");
-  const searchForm = document.getElementById("search-form");
-  const searchInput = document.getElementById("search-input");
+const pages = {
+  test: '/pruebas/test.html',
+  topara: '/templates/LANDING/topara.html',
+};
 
-  if (searchButton && searchForm && searchInput) {
-    searchButton.addEventListener("click", () => {
-      searchForm.classList.toggle("show");
-      if (searchForm.classList.contains("show")) {
-        searchInput.focus();
-      }
-    });
+const btn = document.getElementById('searchBtn');
+const input = document.getElementById('searchInput');
+const msg = document.getElementById('msg');
+
+const performSearch = () => {
+  const q = input.value.trim().toLowerCase();
+  console.log('buscando:', q);
+
+  if (!q) {
+    msg.innerHTML = '<div class="alert alert-warning">El termino de busqueda es demasiado corto</div>';
+    return;
+  }
+
+  const target = pages[q];
+  if (target) {
+    window.location.href = target;
+  } else {
+    msg.innerHTML = `<div class="alert alert-danger">No hay página para "${q}"</div>`;
+  }
+};
+
+btn.addEventListener('click', () => {
+  if (input.style.display === "none") {
+    input.style.display = "block";
+    input.focus();
+    return;
+  }
+  performSearch();
+});
+
+input.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
+    event.preventDefault(); 
+    performSearch();
   }
 });
+
 
 // =========================
 // CARRUSEL
@@ -92,31 +120,31 @@ document.addEventListener("DOMContentLoaded", () => {
 // =========================
 // MODAL
 // =========================
-document.addEventListener("DOMContentLoaded", () => {
-  const modal = document.getElementById("mymodal");
-  const closeBtn = modal?.querySelector(".closebtn");
-  const openBtn = document.getElementById("openmodalbtn");
+// document.addEventListener("DOMContentLoaded", () => {
+//   const modal = document.getElementById("mymodal");
+//   const closeBtn = modal?.querySelector(".closebtn");
+//   const openBtn = document.getElementById("openmodalbtn");
 
-  if (!modal) return;
+//   if (!modal) return;
 
-  if (openBtn) {
-    openBtn.addEventListener("click", () => {
-      modal.style.display = "block";
-    });
-  }
+//   if (openBtn) {
+//     openBtn.addEventListener("click", () => {
+//       modal.style.display = "block";
+//     });
+//   }
 
-  if (closeBtn) {
-    closeBtn.addEventListener("click", () => {
-      modal.style.display = "none";
-    });
-  }
+//   if (closeBtn) {
+//     closeBtn.addEventListener("click", () => {
+//       modal.style.display = "none";
+//     });
+//   }
 
-  window.addEventListener("click", (event) => {
-    if (event.target === modal) {
-      modal.style.display = "none";
-    }
-  });
-});
+//   window.addEventListener("click", (event) => {
+//     if (event.target === modal) {
+//       modal.style.display = "none";
+//     }
+//   });
+// });
 
 // =========================
 // PANEL LATERAL (CARRITO)

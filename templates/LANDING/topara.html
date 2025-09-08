@@ -101,26 +101,41 @@
       </a>
     </div>
 
-    <!-- DERECHA: BUSCAR / CARRITO -->
+    <!-- DERECHA -->
+
     <div class="header-right">
-      <button id="search-button" class="btn">BUSCAR</button>
-      <form id="search-form">
-        <input type="text" placeholder="Buscar..." name="q" id="search-input">
-      </form>
 
-      <button onclick="window.location.href='/templates/LANDING/ingresar.html'" class="btn">INGRESAR</button>
+    <!-- DERECHA: BUSCAR -->
 
-      <button id="cart-button" class="btn">CARRITO</button>
-      <div id="cart-panel" class="side-panel">
-        <div class="panel-header">
-          <button id="close-button">&times;</button>
-          <h2>¡Tu carrito está vacío!</h2>
-        </div>
-        <div class="panel-content">
-          <div class="category one-section">
-            <a href="/templates/DEPORTES/trail_running.html" class="carrito"><img src="/assets/img/carrito1.png" alt=""></a>
-            <a href="/templates/DEPORTES/ciclismo.html" class="carrito"><img src="/assets/img/carrito2.png" alt=""></a>
-            <a href="/templates/EQUIPAJE/equipaje.html" class="carrito"><img src="/assets/img/carrito3.png" alt=""></a>
+    <div class="container-header">
+      <div class="input-group mb-3">
+        <input id="searchInput" class="form-control" placeholder="¿Que estas buscando?" style="display: none;">
+          <button id="searchBtn" type="submit" class="btn">BUSCAR</button>
+
+        <div id="msg"></div>
+      </div>
+    </div>
+
+      <!-- DERECHA: INGRESAR -->
+      <div class="container-header">
+        <button onclick="window.location.href='/templates/LANDING/ingresar.html'" class="btn">INGRESAR</button>
+      </div>
+
+      <!-- DERECHA: CARRITO -->
+
+      <div class="container-header">
+        <button id="cart-button" class="btn">CARRITO</button>
+        <div id="cart-panel" class="side-panel">
+          <div class="panel-header">
+            <button id="close-button">&times;</button>
+            <h2>¡Tu carrito está vacío!</h2>
+          </div>
+          <div class="panel-content">
+            <div class="category one-section">
+              <a href="/templates/DEPORTES/trail_running.html" class="carrito"><img src="/assets/img/carrito1.png" alt=""></a>
+              <a href="/templates/DEPORTES/ciclismo.html" class="carrito"><img src="/assets/img/carrito2.png" alt=""></a>
+              <a href="/templates/EQUIPAJE/equipaje.html" class="carrito"><img src="/assets/img/carrito3.png" alt=""></a>
+            </div>
           </div>
         </div>
       </div>
@@ -202,10 +217,10 @@
   </div>
 
   <!-- SECCIÓN PREMIUM -->
-  <div id="premiumSection" class="hidden-section">
+  <!-- <div id="premiumSection" class="hidden-section">
     <h1>SECCIÓN PREMIUM</h1>
     <p>premium</p>
-  </div>
+  </div> -->
 
   <!-- JS -->
   <script src="/static/appTopara.js"></script>
