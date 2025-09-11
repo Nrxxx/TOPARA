@@ -34,7 +34,6 @@ body {
 
 .logo {
   height: 55px;
-  width: 147px;
   max-width: 100%;
 }
 
@@ -55,7 +54,14 @@ body {
 
 .btn {
   background-color: transparent;
-  padding: 5px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-right {
+  background-color: transparent;
+  padding: 30px;
   border: none;
   cursor: pointer;
 }
@@ -116,41 +122,37 @@ body {
 /* =========================
    MODAL
 ========================= */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 2000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modalcontent {
-  background-color: #fff;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  max-width: 500px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-.closebtn {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.closebtn:hover {
-  color: black;
-}
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.5);
+  }
+  .modal-content {
+    background: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  .close {
+    float: right;
+    cursor: pointer;
+  }
+  input {
+    display: block;
+    margin: 10px auto;
+    padding: 8px;
+    width: 90%;
+  }
+  button {
+    padding: 10px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
 
 /* =========================
    CARRUSEL
@@ -311,9 +313,9 @@ body {
 /* =========================
    PREMIUM
 ========================= */
-.hidden-section {
+/* .hidden-section {
   display: none;
-}
+} */
 
 /* =========================
    BOTÓN WHATSAPP

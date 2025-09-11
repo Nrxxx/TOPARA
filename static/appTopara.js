@@ -120,31 +120,37 @@ document.addEventListener("DOMContentLoaded", () => {
 // =========================
 // MODAL
 // =========================
-// document.addEventListener("DOMContentLoaded", () => {
-//   const modal = document.getElementById("mymodal");
-//   const closeBtn = modal?.querySelector(".closebtn");
-//   const openBtn = document.getElementById("openmodalbtn");
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("loginModal");
+  const openBtn = document.getElementById("openLoginBtn");
+  const closeBtn = document.querySelector(".close");
+  const loginBtn = document.getElementById("loginBtn");
+  const premiumSection = document.getElementById("premiumSection");
 
-//   if (!modal) return;
+  // Abrir modal
+  openBtn.onclick = () => modal.style.display = "block";
+  // Cerrar modal
+  closeBtn.onclick = () => modal.style.display = "none";
+  window.onclick = e => { if (e.target === modal) modal.style.display = "none"; };
 
-//   if (openBtn) {
-//     openBtn.addEventListener("click", () => {
-//       modal.style.display = "block";
-//     });
-//   }
+  // Simulación de login
+  loginBtn.onclick = () => {
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
 
-//   if (closeBtn) {
-//     closeBtn.addEventListener("click", () => {
-//       modal.style.display = "none";
-//     });
-//   }
+    // Aquí deberías consultar a tu backend, yo lo simulo con condicional
+    if (username === "premium" && password === "123") {
+      alert("Bienvenido usuario PREMIUM ✨");
+      premiumSection.style.display = "block";
+    } else {
+      alert("Inicio de sesión exitoso!");
+      premiumSection.style.display = "none";
+    }
 
-//   window.addEventListener("click", (event) => {
-//     if (event.target === modal) {
-//       modal.style.display = "none";
-//     }
-//   });
-// });
+    modal.style.display = "none"; // cerrar modal
+  };
+});
+
 
 // =========================
 // PANEL LATERAL (CARRITO)
