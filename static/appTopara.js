@@ -84,6 +84,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!carrucelItems.length) return;
 
   let currentIndex = 0;
+  const tiempoDeCambio = 10000;
+  let automaticoInterval;
 
   function showSlide(index) {
     carrucelItems.forEach((item) => item.classList.remove("active"));
@@ -93,10 +95,21 @@ document.addEventListener("DOMContentLoaded", () => {
     indicators[index].classList.add("active");
   }
 
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % carrucelItems.length;
+    showSlide(currentIndex);
+  }
+
+  function startAutomaticSlide() {
+    clearInterval(automaticoInterval);
+    automaticoInterval = setInterval(nextSlide, tiempoDeCambio);
+  }
+
   if (nextButton) {
     nextButton.addEventListener("click", () => {
       currentIndex = (currentIndex + 1) % carrucelItems.length;
       showSlide(currentIndex);
+      startAutomaticSlide();
     });
   }
 
@@ -104,6 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
     prevButton.addEventListener("click", () => {
       currentIndex = (currentIndex - 1 + carrucelItems.length) % carrucelItems.length;
       showSlide(currentIndex);
+      startAutomaticSlide(); 
     });
   }
 
@@ -111,10 +125,12 @@ document.addEventListener("DOMContentLoaded", () => {
     indicator.addEventListener("click", () => {
       currentIndex = index;
       showSlide(currentIndex);
+      startAutomaticSlide(); 
     });
   });
 
   showSlide(currentIndex);
+  startAutomaticSlide();
 });
 
 // =========================
