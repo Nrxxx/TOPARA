@@ -262,7 +262,31 @@ const productos = {
     imagenSrc: "/assets/img/44.webp",
     titulo: "Chaleco Acolchado para Mujer Aránzazu - Blanco",
     descripcion: "Chaleco acolchado con relleno térmico 3M, ligero y plegable en bolsita. Corte ergonómico con líneas diagonales en los costados. Dos bolsillos externos con cremalleras invisibles y dos bolsillos internos amplios. Cremallera principal a prueba de agua, tejido repelente al agua y cortavientos. Detalles gráficos reflectivos.",
-    precio: "$299.900"
+    precio: "$ 299.900"
+  },
+  producto5 : {
+    imagenSrc: "/assets/img/55.webp",
+    titulo: "Tula Deportiva Plegable Ultraligera Grande Poas 53L - Negra",
+    descripcion: "Tula plegable de 53L, ultraligera y compacta, fabricada en poliéster con doble capa en PU, resistente al agua y a la abrasión, con sistema de secado rápido. Incluye bolsillo frontal y correa ajustable. Ideal para senderismo y viajes.",
+    precio: "$ 129.900"
+  },
+    producto6 : {
+    imagenSrc: "/assets/img/66.webp",
+    titulo: "Morral Hidratante de 8L Machu Picchu Negro",
+    descripcion: "Morral 8L Machu Picchu: resistente al agua y abrasión, liviano, reflectivo, ideal para senderismo.",
+    precio: "$ 199.900"
+  },
+    producto7 : {
+    imagenSrc: "/assets/img/77.webp",
+    titulo: "Drypack Impermeable Unisex Orinoco - Naranja",
+    descripcion: "Impermeable, resistente a la abrasión, reflectiva, con espaldar modular y apertura enrollable, ideal para actividades acuáticas.",
+    precio: "$ 299.900"
+  },
+    producto8 : {
+    imagenSrc: "/assets/img/88.webp",
+    titulo: "Canguro Deportivo Machu Picchu - Negro",
+    descripcion: "Resistente a la abrasión, liviano, con porta botellas y tecnología airflow, ideal para largas distancias.",
+    precio: "$ 99.900"
   }
 };
 
