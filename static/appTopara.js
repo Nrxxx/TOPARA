@@ -236,23 +236,33 @@ const cerrarBtn = document.querySelector(".cerrar-btn");
 const modalImagen = document.getElementById("modal-imagen");
 const modalTitulo = document.getElementById("modal-titulo");
 const modalDescripcion = document.getElementById("modal-descripcion");
+const modalPrecio = document.getElementById("modal-precio");
 
 
 const productos = {
   producto1: {
-    imagenSrc: "/img/TPRA410003-00N01_1.webp",
-    titulo: "Producto de Muestra 1",
-    descripcion: "Descripción detallada del primer producto. Aquí va toda la información relevante para el usuario."
+    imagenSrc: "/assets/img/11.webp",
+    titulo: "Chaqueta Térmica para Mujer Nevado del Ruíz Negra",
+    descripcion: "Ofrece acolchado interno con alta tecnología y costuras termosellados, garantizando un sellado perfecto al calor. Con relleno térmico 3M, es de secado rápido y ultraliviana. Impermeable, cortavientos y con cremalleras exteriores a prueba de agua, tiene un bolsillo interno, y recubrimiento interior de la tela. Su tela principal está hecha de material reciclado, combinando innovación y sostenibilidad.",
+    precio: "$599.900"
   },
   producto2: {
-    imagenSrc: "/img/TPRA410003-00N01_2.webp",
-    titulo: "Producto de Muestra 2",
-    descripcion: "Esta es la descripción del segundo producto. Explica sus características principales y beneficios."
+    imagenSrc: "/assets/img/22.webp",
+    titulo: "Chaqueta Térmica para Mujer Glaciares",
+    descripcion: "Chaqueta térmica, repelente al agua, de tela bondeada con fleeze en el interno, tiene cuello alto y 3 bolsillos externos. Sus cortes al costado estilizan la figura y la base se ajusta con un elástico. Ideal para hacer senderismo o cualquier actividad al aire libre.",
+    precio: "$299.900"
   },
   producto3: {
-    imagenSrc: "/img/TPRA410003-00N01_3.webp",
-    titulo: "Producto de Muestra 3",
-    descripcion: "Aquí se describe el tercer producto, con sus especificaciones y usos recomendados."
+    imagenSrc: "/assets/img/33.webp",
+    titulo: "Camiseta Manga Larga Tayrona Mujer - Rosada",
+    descripcion: "Camiseta con cuello redondo y manga larga, estampado en el pecho, con tecnología de secado rápido, protección UV y diseño liviano.",
+    precio: "$129.900"
+  },
+  producto4: {
+    imagenSrc: "/assets/img/44.webp",
+    titulo: "Chaleco Acolchado para Mujer Aránzazu - Blanco",
+    descripcion: "Chaleco acolchado con relleno térmico 3M, ligero y plegable en bolsita. Corte ergonómico con líneas diagonales en los costados. Dos bolsillos externos con cremalleras invisibles y dos bolsillos internos amplios. Cremallera principal a prueba de agua, tejido repelente al agua y cortavientos. Detalles gráficos reflectivos.",
+    precio: "$299.900"
   }
 };
 
@@ -263,6 +273,7 @@ function abrirModal(id) {
     modalImagen.src = info.imagenSrc;
     modalTitulo.textContent = info.titulo;
     modalDescripcion.textContent = info.descripcion;
+    modalPrecio.textContent = info.precio;
     modal.style.display = "block";
   }
 }
@@ -270,7 +281,6 @@ function abrirModal(id) {
 
 document.querySelectorAll(".imagen-producto").forEach(img => {
   img.addEventListener("click", (event) => {
-    // Obtener el ID desde el atributo data-modal-id
     const id = event.target.getAttribute("data-modal-id");
     abrirModal(id);
   });

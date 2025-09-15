@@ -378,30 +378,27 @@ body {
   display: flex;
   justify-content: space-around;
   padding: 20px;
-  border: 2px solid #333;
 }
 
 .producto-item {
-  /* ¡Importante! Hacemos de cada artículo un contenedor flexible */
   display: flex;
-  /* Alineamos los elementos verticalmente (imagen y texto) */
   flex-direction: column; 
-  /* Centramos el contenido horizontalmente dentro de cada artículo */
   align-items: center; 
-  
-  text-align: center; /* Centra el texto */
-  margin: 0 10px; /* Agrega espacio entre los artículos */
+  text-align: center; 
+  margin: 0 10px; 
 }
 
 .imagen-producto {
-  width: 100%; /* La imagen ocupa todo el ancho del artículo */
-  height: auto; /* Mantiene la proporción */
-  
-  /* Eliminamos el `display: flex;` que estaba causando problemas */
+  width: 100%; 
+  height: auto; 
 }
 
+/* .color-producto {
+  border-radius: 50%;
+} */
 
-/* Estilos del modal (por defecto oculto) */
+
+/* Estilos del modal */
 .modal {
     display: none; 
     position: fixed; 
