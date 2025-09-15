@@ -374,8 +374,35 @@ body {
 
 /* ----------------------SIN TERMINAR--------------------------------- */
 
+.productos-modal {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  border: 2px solid #333;
+}
+
+.producto-item {
+  /* ¡Importante! Hacemos de cada artículo un contenedor flexible */
+  display: flex;
+  /* Alineamos los elementos verticalmente (imagen y texto) */
+  flex-direction: column; 
+  /* Centramos el contenido horizontalmente dentro de cada artículo */
+  align-items: center; 
+  
+  text-align: center; /* Centra el texto */
+  margin: 0 10px; /* Agrega espacio entre los artículos */
+}
+
+.imagen-producto {
+  width: 100%; /* La imagen ocupa todo el ancho del artículo */
+  height: auto; /* Mantiene la proporción */
+  
+  /* Eliminamos el `display: flex;` que estaba causando problemas */
+}
+
+
 /* Estilos del modal (por defecto oculto) */
-/* .modal {
+.modal {
     display: none; 
     position: fixed; 
     z-index: 1; 
@@ -385,20 +412,20 @@ body {
     height: 100%;
     overflow: auto; 
     background-color: rgba(0,0,0,0.7); 
-} */
+}
 
 /* Contenido del modal */
-/* .modal-contenido {
+.modal-contenido {
     background-color: #fefefe;
     margin: 15% auto; 
     padding: 20px;
     border: 1px solid #888;
     width: 80%; 
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-} */
+}
 
 /* Botón de cerrar */
-/* .cerrar-btn {
+.cerrar-btn {
     color: #aaa;
     float: right;
     font-size: 28px;
@@ -410,14 +437,14 @@ body {
     color: black;
     text-decoration: none;
     cursor: pointer;
-} */
+}
 
 /* Estilos de la imagen dentro del modal */
-/* .modal-imagen {
+.modal-imagen {
     max-width: 100%;
     height: auto;
     display: block;
     margin: 0 auto 15px; 
-} */
+}
 
 /* ------------------------------------------------------- */
