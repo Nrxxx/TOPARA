@@ -374,7 +374,7 @@ body {
 
 /* ----------------------SIN TERMINAR--------------------------------- */
 
-.productos-modal {
+.productos-compra {
   display: flex;
   justify-content: space-around;
   padding: 20px;
@@ -445,3 +445,17 @@ body {
 }
 
 /* ------------------------------------------------------- */
+
+.mas-info {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.footer {
+  background-color: black;
+}
+
+h2 {
+  color: grey;
+}
